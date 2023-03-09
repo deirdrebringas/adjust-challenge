@@ -6,6 +6,7 @@ RSpec.describe GithubClient do
   describe '#search_repositories' do
     context 'when the query is valid' do
       it 'returns a results object with the items and page references' do
+        # Instead of mocking this, we can use the VCR gem to record a response from GitHub
         mock_page_infos = { first: nil, next: nil, prev: nil, last: nil }
         file_content = file_fixture('github/repositories.json').read
         repositories = JSON.parse(file_content, symbolize_names: true)

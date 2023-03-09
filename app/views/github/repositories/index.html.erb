@@ -12,7 +12,7 @@
             <% end %>
         </div>
 
-        # This can be extracted to a partial file if it gets too long
+        <!-- This can be extracted to a partial file if it gets too long for clarity -->
         <% if @response.present? %>
             <ul class="list">
                 <% @response[:page_items].each do |repository| %>
@@ -49,8 +49,6 @@
                         class: "#{'disabled' unless @response[:last].present?}" %>
                 </li>
             </ul>
-
-
         <% end %>
     </div>
 </div>
