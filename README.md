@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a full-stack implementation of a GitHub Repository search as a part of the Adjust Coding Challenge.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+This project requires the following versions:
 
-* System dependencies
+* Ruby 3.2.1
+* Rails 7
 
-* Configuration
+## Setup & Usage
 
-* Database creation
+After cloning the repository and navgating to the folder, run the setup script in order to install the application's gems
 
-* Database initialization
+```ruby
+bin/setup
+```
 
-* How to run the test suite
+The server can now be started on port 3000 (or another free one of your choosing)
 
-* Services (job queues, cache servers, search engines, etc.)
+```ruby
+bin/rails s -p 3000
+```
 
-* Deployment instructions
+Once the server has been started, the application is available through [http://localhost:3000/github/repositories](http://localhost:3000/github/repositories).
 
-* ...
+Type in a search term, press enter, and enjoy!
+
+
+## Tests
+
+Test files are located within the `spec` folder and can be run with the following command:
+
+```ruby
+bundle exec rspec
+```
