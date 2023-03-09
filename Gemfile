@@ -39,7 +39,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # FontAwesome for awesome icons
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -57,6 +57,7 @@ group :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'rubocop-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

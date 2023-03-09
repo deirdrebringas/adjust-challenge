@@ -12,43 +12,6 @@
             <% end %>
         </div>
 
-        <!-- This can be extracted to a partial file if it gets too long for clarity -->
-        <% if @response.present? %>
-            <ul class="list">
-                <% @response[:page_items].each do |repository| %>
-                    <li class="list-item">
-                        <%= link_to(repository[:url], target: "_blank", rel: "nofollow") do %>
-                            <div class="list-item-header">
-                                <strong><%= repository[:name] %></strong>
-                                <div class="list-icons">
-                                    <div>
-                                        <i class="fa fa-star"></i>
-                                    <%= repository[:stars] %>
-                                    </div>
-                                    <div>
-                                        <i class="fa fa-code-fork"></i>
-                                        <%= repository[:forks] %>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <span>
-                                <%= repository[:description] %>
-                            </span>
-                        <% end  %>
-                    </li>
-                <% end %>
-                <li class="list-item list-item-actions">
-                    <%= link_to 'First Page',github_repositories_path(:query => params[:query], :page => @response[:first]),
-                        class: "#{'disabled' unless @response[:first].present?}" %>
-                    <%= link_to 'Previous Page', github_repositories_path(:query => params[:query], :page => @response[:prev]),
-                        class: "#{'disabled' unless @response[:prev].present?}" %>
-                    <%= link_to 'Next Page', github_repositories_path(:query => params[:query], :page => @response[:next]),
-                        class: "#{'disabled' unless @response[:next].present?}" %>
-                    <%= link_to 'Last Page', github_repositories_path(:query => params[:query], :page => @response[:last]),
-                        class: "#{'disabled' unless @response[:last].present?}" %>
-                </li>
-            </ul>
-        <% end %>
+        <%= render 'repositories'%>
     </div>
 </div>

@@ -11,7 +11,7 @@ RSpec.describe GithubClient do
         file_content = file_fixture('github/repositories.json').read
         repositories = JSON.parse(file_content, symbolize_names: true)
         allow_any_instance_of(Octokit::Client)
-            .to receive_message_chain(:last_response, :rels).and_return(mock_page_infos)
+          .to receive_message_chain(:last_response, :rels).and_return(mock_page_infos)
         allow_any_instance_of(Octokit::Client).to receive_message_chain(:last_response, :status).and_return(200)
         allow_any_instance_of(Octokit::Client).to receive(:search_repositories).and_return(repositories)
 
